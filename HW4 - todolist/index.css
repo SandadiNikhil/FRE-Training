@@ -104,14 +104,14 @@ ul li button:active {
 
 ul {
 	height: calc(
-		var(--height-todolist) - var(--height-todolist-header) * 2
+			var(--height-todolist) - var(--height-todolist-header) * 2
 	);
 	overflow: auto;
 }
 
-.done {
-  text-decoration: line-through;
-  color:red;
+li.highlighted {
+	text-decoration: line-through;
+	color:red;
 }
 
 /* ul li:nth-child(2n) {

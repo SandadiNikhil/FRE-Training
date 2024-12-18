@@ -1,4 +1,5 @@
 export const View = (() => {
+
 	const domstr = {
 		inputBox: "todolist-input",
 		listContainer: "todolist-container",
@@ -9,7 +10,7 @@ export const View = (() => {
 		let tmp = "";
 		todoArr.forEach((todo) => {
 			tmp += `
-                <li>
+          		<li id="${todo.id}">
                     <span class="todo-text">${todo.title}</span>
                     <button class='delete-btn' id='${todo.id}'>X</button>
                 </li>
@@ -23,4 +24,5 @@ export const View = (() => {
 	};
 
 	return { domstr, render, createTmp };
+
 })();
