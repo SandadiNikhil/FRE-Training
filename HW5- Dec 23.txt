@@ -1,0 +1,36 @@
+
+git clone projectPath - Creates a local copy of a remote repository.
+
+git pull - Fetches the latest changes from the remote repository and merges them into your current branch.
+
+git checkout [branchName] - Switches to the specified branch.
+
+git branch [branchName] - Creates a new branch but does not switch to it.
+
+git checkout -b [branchName] - Creates a new branch and switches to it.
+
+git branch - Lists all local branches, highlighting the current branch.
+
+git add . - Stages all modified files for the next commit.
+
+git commit - Records staged changes to the repository with a commit message.
+
+git log - Displays the commit history of the current branch.
+
+git push - Sends local commits to the remote repository.
+
+git merge - Combines changes from one branch into the current branch.
+
+git reset vs git revert
+   - git reset : Moves the branch pointer back to a previous commit and changes the working directory (can be destructive).
+   - git revert : Creates a new commit that undoes the changes of a previous commit.
+
+- git merge vs git rebase
+   - git merge : Combines two branches, keeping both histories intact.
+   - git rebase : Re-applies changes from one branch onto another, simplifying commit history.
+
+- git pull vs git fetch
+   - git pull : Fetches and merges changes from the remote repository.
+   - git fetch : Fetches changes from the remote without merging them, updating only the local copy.
+
+follow the steps and learn angular moduel based structure. https://www.tektutorialshub.com/angular/angular-create-first-application/
