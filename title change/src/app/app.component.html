@@ -1,0 +1,4 @@
+<div class="title-container">
+  <h1 [ngStyle]="{'color': titleColor}">{{ title }}</h1>
+</div>
+<app-list (titleColorChange)="updateTitleColor($event)"></app-list>
