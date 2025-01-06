@@ -1,0 +1,8 @@
+<div class="search-bar">
+  <input
+    #searchInput
+    type="text"
+    placeholder="Type an artist name (or 'local')"
+    (keyup.enter)="onSearch(searchInput.value)"
+  />
+</div>
