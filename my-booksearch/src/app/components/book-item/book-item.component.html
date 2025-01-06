@@ -1,0 +1,13 @@
+<div class="book-item">
+    <div class="cover-container" *ngIf="book.coverImage">
+      <img [src]="book.coverImage" [alt]="book.title" />
+    </div>
+    <div class="info-container">
+      <h3>{{ book.title }}</h3>
+      <p *ngIf="book.publisher"><strong>Publisher:</strong> {{ book.publisher }}</p>
+      <p *ngIf="book.publishDate"><strong>Publish Date:</strong> {{ book.publishDate }}</p>
+      <p *ngIf="book.description">{{ book.description }}</p>
+      <button (click)="onAddToWishlist()">Add to Wishlist</button>
+    </div>
+  </div>
+  

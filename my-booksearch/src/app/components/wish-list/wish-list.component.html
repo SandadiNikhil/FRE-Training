@@ -1,0 +1,10 @@
+<div>
+  <h2>Wishlist</h2>
+  <div *ngIf="wishlist.length === 0">
+    <p>No items in the wishlist</p>
+  </div>
+  <div *ngFor="let book of wishlist">
+    <h3>{{ book.title }}</h3>
+    <button (click)="removeFromWishlist(book)">Remove</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="keyword"
+    placeholder="Search for a book..."
+    (keyup.enter)="onSearch()"
+  />
+  <button (click)="onSearch()">Search</button>
+</div>

@@ -1,0 +1,16 @@
+<!-- <div class="booklist-container">
+  <app-book-item
+    *ngFor="let book of books"
+    [book]="book"
+    (addToWishlist)="onAddToWishlist($event)"
+  ></app-book-item>
+</div> -->
+
+<div>
+  <h2>Book List</h2>
+  <div *ngFor="let book of books">
+    <h3>{{ book.title }}</h3>
+    <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+    <p><strong>Publish Date:</strong> {{ book.publishDate }}</p>
+  </div>
+</div>

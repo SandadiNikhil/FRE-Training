@@ -1,0 +1,21 @@
+<header>
+  <h1>My Book App</h1>
+  <nav>
+    <a routerLink="/search" routerLinkActive="active">Search</a>
+    <a routerLink="/book-list" routerLinkActive="active">Book List</a>
+    <a routerLink="/wishlist" routerLinkActive="active">Wishlist</a>
+  </nav>
+</header>
+
+<main class="app-container">
+  <app-search (searchTerm)="handleSearch($event)"></app-search> <!-- Keep only one instance -->
+  <div *ngIf="searchResults.length > 0" class="results-container">
+    <h2>Search Results:</h2>
+    <div *ngFor="let book of searchResults" class="result-item">
+      <h3>{{ book.title }}</h3>
+      <p *ngIf="book.publisher"><strong>Publisher:</strong> {{ book.publisher }}</p>
+      <p *ngIf="book.publishDate"><strong>Publish Date:</strong> {{ book.publishDate }}</p>
+      <button (click)="handleAddToWishlist(book)">Add to Wishlist</button>
+    </div>
+  </div>
+</main>
