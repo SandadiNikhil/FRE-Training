@@ -1,5 +1,76 @@
-ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
+.card {
+  max-width: 480px;
+  margin: 2rem auto;         
+  background-color: #fff;   
+  border-radius: 8px;        
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 1.5rem;            
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.select-all-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.select-all-row input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.movie-list {
+  list-style: none; 
+  padding-left: 0;  
+  margin: 0;        
+}
+
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.checkbox-row:last-child {
+  border-bottom: none;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.checkbox-row:hover {
+  background-color: #fafafa;
+}
+
+form {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+  min-height: 100vh;         
+  padding: 1rem 0;           
+  margin: 0;                 
+}
+
+.clear-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #d9534f;  
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background-color: #c9302c;
+}
+
