@@ -11,5 +11,5 @@ import { FormComponent } from '../form/form.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-standalone-app';
+  title = 'SelectAll-app';
 }
