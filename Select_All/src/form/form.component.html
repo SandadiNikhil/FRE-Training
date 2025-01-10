@@ -1,0 +1,23 @@
+<form #form="ngForm">
+    <input
+      type="checkbox"
+      name="selectall"
+      [(ngModel)]="selectall"
+      (change)="selectallHandler()"
+    />
+    <label for="selectall">Select All</label>
+  
+    <ul>
+      <li *ngFor="let movie of movies">
+        <input
+          type="checkbox"
+          [id]="movie"
+          [name]="movie"
+          [(ngModel)]="obj[movie]"
+          (change)="changeHandler(movie)"
+        />
+        <label [for]="movie">{{ movie }}</label>
+      </li>
+    </ul>
+  </form>
+  
