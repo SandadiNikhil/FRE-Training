@@ -29,7 +29,6 @@ export class FormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // Initialize all movies as unchecked
     for (let movie of this.movies) {
       this.obj[movie] = false;
     }
@@ -38,6 +37,13 @@ export class FormComponent implements OnInit {
   selectallHandler() {
     for (let key in this.obj) {
       this.obj[key] = this.selectall;
+    }
+  }
+  
+  clearAll() {
+    this.selectall = false;
+    for (let key in this.obj) {
+      this.obj[key] = false;
     }
   }
 
