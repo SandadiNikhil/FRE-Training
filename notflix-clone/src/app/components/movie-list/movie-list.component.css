@@ -1,0 +1,14 @@
+.container {
+    padding: 0;
+    background-color: black;
+  }
+
+  .list{
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+  }
+

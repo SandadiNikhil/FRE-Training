@@ -1,0 +1,35 @@
+.header {
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 16px; 
+    padding: 0 auto;
+  }
+  
+  .logo {
+    background-image: url("../../../../public/assets/netflix.svg");
+    background-size: contain; /* Makes the logo fit without distortion */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px; 
+    width: 170px; 
+  }
+
+  .sign-in {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .register {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
