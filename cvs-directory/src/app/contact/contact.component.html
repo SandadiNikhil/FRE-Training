@@ -1,0 +1,78 @@
+<!-- <h2>Contact us</h2>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name:</label>
+    <input formControlName="name" type="text" />
+    <div *ngIf="submitted && f.name.errors" style="color: red;">
+      Name is required.
+    </div>
+  </div>
+  <div>
+    <label>Message:</label>
+    <textarea formControlName="message"></textarea>
+    <div *ngIf="submitted && f.message.errors" style="color: red;">
+      <div *ngIf="f.message.errors.required">Message is required.</div>
+      <div *ngIf="f.message.errors.minlength">Message must be at least 10 characters.</div>
+    </div>
+  </div>
+  <button type="submit">Send Message</button>
+</form>
+
+<div *ngIf="submitted && contactForm.valid" style="margin-top: 20px;">
+  <p>Thank you for contacting us. We will be in touch shortly!</p>
+  <p><strong>Name:</strong> {{ contactForm.value.name }}</p>
+  <p><strong>Message:</strong> {{ contactForm.value.message }}</p>
+</div> -->
+
+
+
+
+
+
+<div class="contact-container">
+  <h2>Contact Us</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input 
+        id="name" 
+        type="text" 
+        formControlName="name" 
+        [ngClass]="{'invalid': submitted && f['name'].errors}"
+      />
+      <div 
+        class="error-msg" 
+        *ngIf="submitted && f['name'].errors?.['required']"
+      >
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea 
+        id="message" 
+        formControlName="message" 
+        [ngClass]="{'invalid': submitted && f['message'].errors}"
+      ></textarea>
+      
+      <div class="error-msg" *ngIf="submitted && f['message'].errors">
+        <div *ngIf="f['message'].errors?.['required']">
+          Message is required.
+        </div>
+        <div *ngIf="f['message'].errors?.['minlength']">
+          Message must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="success-box" *ngIf="successData">
+    <h3>Form Submitted Successfully!</h3>
+    <p><strong>Name:</strong> {{ successData.name }}</p>
+    <p><strong>Message:</strong> {{ successData.message }}</p>
+  </div>
+</div>

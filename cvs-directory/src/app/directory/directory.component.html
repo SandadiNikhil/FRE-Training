@@ -1,0 +1,34 @@
+<!-- <h2>CVS Users</h2>
+
+<div *ngFor="let employee of employees" style="margin: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+    <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+    <div>
+        <strong>{{ employee.name }}</strong><br>
+        <a [href]="'mailto:' + employee.email">{{ employee.email }}</a>
+    </div>
+</div> -->
+
+
+<div class="directory-container">
+    <h2>Employee Directory</h2>
+  
+    <p *ngIf="error" class="error-msg">{{ error }}</p>
+  
+    <div *ngIf="users && users.length > 0; else noUsers">
+      <div *ngFor="let user of users" class="user-card">
+        <img [src]="user.avatar" alt="{{ user.first_name }}" />
+        <div class="user-details">
+          <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+          <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noUsers>
+      <p>No users found.</p>
+    </ng-template>
+  </div>
+  
+
+  
+  
