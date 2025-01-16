@@ -1,0 +1,64 @@
+.contact-container {
+    max-width: 600px;
+    margin: 16px auto;
+    padding: 0 16px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+  }
+
+.prompt {
+  color: rgb(0, 128, 49);
+  margin-bottom: 40px;
+}
+
+.name{
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+
+.message {
+    margin-top: 20px;
+}
+  
+  button {
+    background-color: #eb0000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+  }
+  
+  button:hover {
+    background-color: #c10000;
+  }
+  
+  .invalid {
+    border: 1px solid red;
+  }
+  
+  .error-msg {
+    color: red;
+    margin-top: 4px;
+  }
+
+  

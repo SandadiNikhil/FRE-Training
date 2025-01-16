@@ -1,0 +1,62 @@
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitted; else success">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input 
+        id="name" 
+        type="text" 
+        formControlName="name" 
+        [ngClass]="{'invalid': submitted && f['name'].errors}"
+      />
+
+      <div 
+        class="error-msg" 
+        *ngIf="submitted && f['name'].errors?.['required']"
+      >
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea 
+        id="message" 
+        formControlName="message" 
+        [ngClass]="{'invalid': submitted && f['message'].errors}"
+      ></textarea>
+      
+      <div class="error-msg" *ngIf="submitted && f['message'].errors">
+        <div *ngIf="f['message'].errors?.['required']">
+          Message is required.
+        </div>
+        <div *ngIf="f['message'].errors?.['minlength']">
+          Message must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+
+<ng-template #success>
+  <div>
+    <h2 class="prompt">
+      Thank you for contacting us. We will be in touch shortly!
+    </h2>
+    <p class="name">
+      <strong><h3>You have submitted the following message:</h3></strong> </p>
+    
+      <span><strong>Name:</strong></span>
+    <p>{{ successData.name }}</p>
+      
+    <div class="message">
+      <span><strong>Message:</strong></span>
+    </div>
+    <p>{{ successData.message }}</p>
+      
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+<!-- <h2>CVS Users</h2> -->
+
+<div class="container">
+  <h1>Employee Directory</h1>
+  
+  <div *ngIf="employees && employees.length > 0; else noEmployees">
+    <div *ngFor="let employee of employees" class="employee-card">
+      <img [src]="employee.avatar" alt="{{ employee.first_name }}" />
+      
+      <div class="employee-details">
+        <h3>{{ employee.first_name }} {{ employee.last_name }} </h3>
+        <a [href]="'mailto:' + employee.email">{{ employee.email }}</a>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noEmployees>
+    <p>No Employees found.</p>
+  </ng-template>
+
+</div>
