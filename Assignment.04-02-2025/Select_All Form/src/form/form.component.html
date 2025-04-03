@@ -1,0 +1,38 @@
+ 
+<form #form="ngForm">
+  <div class="card">
+    <h2>Select Your Favorite Movies</h2>
+    
+      <div class="select-all-row">
+        <input
+           type="checkbox"
+           name="selectall"
+           [(ngModel)]="selectall"
+           (change)="selectallHandler()"
+           id="selectall"
+         />
+         <label for="selectall"><strong>Select All</strong></label>
+       </div>
+    
+       <ul class="movie-list">
+         <li *ngFor="let movie of movies">
+           <div class="checkbox-row">
+             <input
+               type="checkbox"
+               [id]="movie"
+               [name]="movie"
+               [(ngModel)]="obj[movie]"
+               (change)="changeHandler(movie)"
+             />
+             <label [for]="movie">{{ movie }}</label>
+           </div>
+         </li>
+    </ul>
+    <button type="button" class="clear-btn" (click)="clearAll()">
+      Clear All
+    </button>
+  </div>
+  
+    
+</form>
+    
