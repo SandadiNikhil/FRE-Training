@@ -1,0 +1,8 @@
+<div class="history">
+    <h3>History</h3>
+    <ul>
+        <li *ngFor="let entry of entries">
+            {{ entry.action }} ({{ entry.undo }} -> {{ entry.redo }})
+        </li>
+    </ul>
+</div>

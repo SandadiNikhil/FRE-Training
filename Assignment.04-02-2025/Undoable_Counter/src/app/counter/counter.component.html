@@ -1,0 +1,20 @@
+<div class="counter">
+    <h2>Counter</h2>
+
+    <div class="actions">
+        <button (click)="undo()" [disabled]="history.length === 0">Undo</button>
+        <button (click)="redo()" [disabled]="redoStack.length === 0">Redo</button>
+    </div>
+
+    <div class="buttons">
+        <button (click)="changeCount(1)">+1</button>
+        <button (click)="changeCount(10)">+10</button>
+        <button (click)="changeCount(100)">+100</button>
+        <span class="count-display">{{ count }}</span>
+        <button (click)="changeCount(-1)">-1</button>
+        <button (click)="changeCount(-10)">-10</button>
+        <button (click)="changeCount(-100)">-100</button>
+    </div>
+</div>
+
+<app-history [entries]="history"></app-history>
