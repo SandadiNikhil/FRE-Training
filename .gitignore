@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Angular build outputs
+dist/
+.angular/
+
+# Environment files
+*.env
+
+# IDE/editor stuff
+.vscode/
+.idea/
+
+# macOS cruft
+.DS_Store
+
