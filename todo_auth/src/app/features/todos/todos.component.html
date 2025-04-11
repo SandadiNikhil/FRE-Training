@@ -3,17 +3,9 @@
     <h2>Todo List</h2>
     <button class="logout" (click)="auth.logout()">Logout</button>
   </div>
-  <p class="welcome">Welcome, {{ auth.getUsername() }}</p>
+  <p class="welcome">Welcome, {{ auth.getUsername() }}!</p>
 
-  <div *ngIf="todoService.loading()" class="info">⏳ Loading...</div>
-  <div *ngIf="todoService.error()" class="info error">
-    ⚠️ {{ todoService.error() }}
-  </div>
-
-  <ul
-    *ngIf="!todoService.loading() && todoService.todos().length > 0"
-    class="todo-list"
-  >
+  <ul *ngIf="todoService.todos().length > 0" class="todo-list">
     <li
       *ngFor="let todo of todoService.todos()"
       [class.completed]="todo.completed"
@@ -28,12 +20,7 @@
     </li>
   </ul>
 
-  <p
-    *ngIf="!todoService.loading() && todoService.todos().length === 0"
-    class="info"
-  >
-    No tasks yet
-  </p>
+  <p *ngIf="todoService.todos().length === 0" class="info"> No tasks yet</p>
 
   <div class="add-task">
     <input [(ngModel)]="newTask" placeholder="New task..." />
