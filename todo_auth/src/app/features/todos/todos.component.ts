@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   standalone: true,
@@ -9,4 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent {
+  auth = inject(AuthService);
 }

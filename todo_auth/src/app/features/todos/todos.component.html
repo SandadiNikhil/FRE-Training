@@ -1,2 +1,5 @@
-<h2>Todo List</h2>
-<p>This is where your todo list will be displayed once you’re logged in.</p>
+<!-- <h2>Todo List</h2>
+<p>This is where your todo list will be displayed once you’re logged in.</p> -->
+
+<h2>Welcome, {{ auth.getUsername() }}</h2>
+<button (click)="auth.logout()">Logout</button>

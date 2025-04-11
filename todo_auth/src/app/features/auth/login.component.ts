@@ -8,6 +8,7 @@ import {
   AsyncValidatorFn,
 } from '@angular/forms';
 import { map, of, delay, debounceTime, switchMap } from 'rxjs';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   standalone: true,
@@ -21,6 +22,9 @@ export class LoginComponent {
 
   // Hardcoded allowed usernames
   private allowedUsers = ['alice', 'bob', 'charlie'];
+
+  private auth = inject(AuthService);
+
 
   form = this.fb.group({
     username: [
@@ -43,7 +47,7 @@ export class LoginComponent {
         debounceTime(500),
         switchMap((value) =>
           of(this.allowedUsers.includes(value)).pipe(
-            delay(500), // Simulated API call delay
+            delay(500), // API call delay
             map(isValid => (isValid ? null : { userNotFound: true }))
           )
         )
@@ -53,6 +57,8 @@ export class LoginComponent {
 
   login() {
     if (this.form.valid) {
+      const username = this.form.value.username!;
+      this.auth.login(username);
       console.log('Logging in with:', this.form.value.username);
     }
   }
