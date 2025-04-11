@@ -21,7 +21,7 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
 
   // Hardcoded allowed usernames
-  private allowedUsers = ['alice', 'bob', 'charlie'];
+  private allowedUsers = ['Nikhil', 'Alice', 'Bob', 'Antra'];
 
   private auth = inject(AuthService);
 

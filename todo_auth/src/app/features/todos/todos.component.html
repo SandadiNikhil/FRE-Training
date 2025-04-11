@@ -1,32 +1,44 @@
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div class="todo-container">
+  <div class="header">
     <h2>Todo List</h2>
-    <button (click)="auth.logout()">Logout</button>
+    <button class="logout" (click)="auth.logout()">Logout</button>
   </div>
-  <p>Welcome, {{ auth.getUsername() }}! </p>
-  
-<div *ngIf="todoService.loading()">Loading tasks...</div>
-<div *ngIf="todoService.error()">Error: {{ todoService.error() }}</div>
+  <p class="welcome">Welcome, {{ auth.getUsername() }}</p>
 
-<div *ngIf="!todoService.loading() && todoService.todos().length === 0">
-  <p>No tasks yet. Add one!</p>
+  <div *ngIf="todoService.loading()" class="info">⏳ Loading...</div>
+  <div *ngIf="todoService.error()" class="info error">
+    ⚠️ {{ todoService.error() }}
+  </div>
+
+  <ul
+    *ngIf="!todoService.loading() && todoService.todos().length > 0"
+    class="todo-list"
+  >
+    <li
+      *ngFor="let todo of todoService.todos()"
+      [class.completed]="todo.completed"
+    >
+      <input
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="toggle(todo.id)"
+      />
+      <span>{{ todo.text }}</span>
+      <button (click)="delete(todo.id)">❌</button>
+    </li>
+  </ul>
+
+  <p
+    *ngIf="!todoService.loading() && todoService.todos().length === 0"
+    class="info"
+  >
+    No tasks yet
+  </p>
+
+  <div class="add-task">
+    <input [(ngModel)]="newTask" placeholder="New task..." />
+    <button (click)="add()">Add</button>
+  </div>
+
+  <button class="clear-btn" (click)="todoService.clearAll()">Clear All</button>
 </div>
-
-<ul>
-  <li *ngFor="let todo of todoService.todos()">
-    <input
-      type="checkbox"
-      [checked]="todo.completed"
-      (change)="toggle(todo.id)"
-    />
-    <span [style.text-decoration]="todo.completed ? 'line-through' : 'none'">
-      {{ todo.text }}
-    </span>
-    <button (click)="delete(todo.id)">❌</button>
-  </li>
-</ul>
-
-<input [(ngModel)]="newTask" placeholder="New task..." />
-<button (click)="add()">Add Task</button>
-
-<br /><br />
-<button (click)="todoService.clearAll()">Clear All</button>

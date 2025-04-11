@@ -1,11 +1,24 @@
-<form [formGroup]="form" (ngSubmit)="login()">
-    <label for="username">Username</label>
-    <input id="username" formControlName="username" type="text" />
-  
-    <div *ngIf="username?.pending">Checking...</div>
-    <div *ngIf="username?.valid && username?.dirty">✅ User found</div>
-    <div *ngIf="username?.errors?.['userNotFound'] && username?.dirty">❌ User not found</div>
-  
-    <button type="submit" [disabled]="form.invalid || form.pending">Login</button>
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <input
+      formControlName="username"
+      type="text"
+      placeholder="Enter your username"
+      [class.invalid]="username?.errors && username?.touched"
+    />
+
+    <div class="status">
+      <span *ngIf="username?.pending">🔄 Checking...</span>
+      <span *ngIf="username?.valid && username?.dirty">✅ User found</span>
+      <span *ngIf="username?.errors?.['userNotFound'] && username?.dirty"
+        >❌ User not found</span
+      >
+    </div>
+
+    <button type="submit" [disabled]="form.invalid || form.pending">
+      Login
+    </button>
+    <p>Hint! its either Nikhil, Alice or Antra</p>
   </form>
-  
+</div>
