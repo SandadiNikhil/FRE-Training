@@ -33,9 +33,9 @@ A simple Angular application that demonstrates:
 Use one of the following usernames to login:
 
 - 'Nikhil'
-- `Alice`
-- `Bob`
-- `Antra`
+- 'Alice'
+- 'Antra'
+- 'Bob'
 
 (Password is hardcoded; no real password check)
 
