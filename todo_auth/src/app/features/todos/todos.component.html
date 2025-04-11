@@ -1,5 +1,32 @@
-<!-- <h2>Todo List</h2>
-<p>This is where your todo list will be displayed once you’re logged in.</p> -->
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>Todo List</h2>
+    <button (click)="auth.logout()">Logout</button>
+  </div>
+  <p>Welcome, {{ auth.getUsername() }}! </p>
+  
+<div *ngIf="todoService.loading()">Loading tasks...</div>
+<div *ngIf="todoService.error()">Error: {{ todoService.error() }}</div>
 
-<h2>Welcome, {{ auth.getUsername() }}</h2>
-<button (click)="auth.logout()">Logout</button>
+<div *ngIf="!todoService.loading() && todoService.todos().length === 0">
+  <p>No tasks yet. Add one!</p>
+</div>
+
+<ul>
+  <li *ngFor="let todo of todoService.todos()">
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="toggle(todo.id)"
+    />
+    <span [style.text-decoration]="todo.completed ? 'line-through' : 'none'">
+      {{ todo.text }}
+    </span>
+    <button (click)="delete(todo.id)">❌</button>
+  </li>
+</ul>
+
+<input [(ngModel)]="newTask" placeholder="New task..." />
+<button (click)="add()">Add Task</button>
+
+<br /><br />
+<button (click)="todoService.clearAll()">Clear All</button>
