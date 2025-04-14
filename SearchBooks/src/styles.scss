@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f0f2f5;
+  }
+  
+  nav {
+    background: white;
+    padding: 12px 20px;
+    display: flex;
+    gap: 20px; 
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: #007bff;
+  }
+  

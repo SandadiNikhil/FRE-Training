@@ -1,0 +1,35 @@
+h2 {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  li {
+    background: #f9f9f9;
+    padding: 12px 19px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #a50000;
+  }
+  

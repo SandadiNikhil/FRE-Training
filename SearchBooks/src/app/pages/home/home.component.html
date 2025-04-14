@@ -1,0 +1,21 @@
+<div class="search-container">
+  <input [formControl]="searchControl" placeholder="Search book" />
+</div>
+
+<div class="book-list">
+  <div *ngFor="let book of books" class="book-card">
+    <img
+      *ngIf="book.volumeInfo.imageLinks?.thumbnail"
+      [src]="book.volumeInfo.imageLinks.thumbnail"
+    />
+    <h3>{{ book.volumeInfo.title }}</h3>
+    <p *ngIf="book.volumeInfo.publisher">
+      Publisher: {{ book.volumeInfo.publisher }}
+    </p>
+    <p *ngIf="book.volumeInfo.publishedDate">
+      Published: {{ book.volumeInfo.publishedDate }}
+    </p>
+    <p *ngIf="book.volumeInfo.description">{{ book.volumeInfo.description }}</p>
+    <button (click)="addToWishlist(book)">Add to Wishlist</button>
+  </div>
+</div>

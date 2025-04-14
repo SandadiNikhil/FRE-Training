@@ -1,0 +1,12 @@
+<h2>Wishlist</h2>
+
+<div *ngIf="wishlist.length === 0">
+  <p>No books added yet.</p>
+</div>
+
+<ul>
+  <li *ngFor="let book of wishlist">
+    {{ book.volumeInfo.title }}
+    <button (click)="removeBook(book.id)">Delete</button>
+  </li>
+</ul>
