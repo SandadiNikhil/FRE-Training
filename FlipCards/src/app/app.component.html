@@ -1,0 +1,22 @@
+<h1>Flip Memory Game</h1>
+<div class="grid">
+  <div
+    class="card"
+    *ngFor="let card of cards()"
+    [class.flipped]="card.flipped || card.matched"
+    (click)="onCardClick(card.id)"
+  >
+    <div class="inner">
+      <span class="front">❓</span>
+      <span class="back">{{ card.emoji }}</span>
+    </div>
+  </div>
+</div>
+<div *ngIf="!gameWon()" class="reset">
+  <button (click)="playAgain()">Reset!</button>
+</div>
+
+<div *ngIf="gameWon()" class="win-banner">
+  <h2>You Win!</h2>
+  <button (click)="playAgain()">Play Again</button>
+</div>
