@@ -1,0 +1,8 @@
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px auto;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
