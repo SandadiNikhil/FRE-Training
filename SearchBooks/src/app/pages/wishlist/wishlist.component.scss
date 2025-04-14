@@ -10,6 +10,11 @@ h2 {
     flex-direction: column;
     gap: 10px;
   }
+
+  div{
+    display: flex;
+    justify-content: center;
+  }
   
   li {
     background: #f9f9f9;
