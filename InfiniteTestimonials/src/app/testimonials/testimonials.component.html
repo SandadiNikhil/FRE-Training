@@ -1,0 +1,10 @@
+<h2 class="heading">Testimonials</h2>
+
+<div class="container" (scroll)="onScroll($event)">
+  <div class="card" *ngFor="let testimonial of testimonials()">
+    {{ testimonial.message }}
+  </div>
+
+  <div class="info" *ngIf="loading()">Loading more...</div>
+  <div class="info error" *ngIf="error()">Something went wrong!</div>
+</div>

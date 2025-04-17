@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://api.frontendexpert.io/api/fe",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
