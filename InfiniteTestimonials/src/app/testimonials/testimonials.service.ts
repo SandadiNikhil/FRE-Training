@@ -7,7 +7,8 @@ import { Testimonial, TestimonialsResponse } from './model';
 })
 export class TestimonialsService {
   private API_URL = '/api/testimonials';
-
+  // used proxy.conf.json for CORS issues
+  // "proxy.conf.json": {
   testimonials = signal<Testimonial[]>([]);
   loading = signal(false);
   error = signal(false);
@@ -17,6 +18,7 @@ export class TestimonialsService {
   constructor(private http: HttpClient) {}
 
   fetchTestimonials(limit = 5) {
+    console.log('Fetching triggered');
     if (this.loading() || !this.hasNext()) return;
 
     this.loading.set(true);
